@@ -432,33 +432,82 @@ p {
 }
 
 /* ==========================================================================
-   HERO SECTION
+   HERO SECTION WITH BACKGROUND IMAGE AUTO SLIDER
    ========================================================================== */
 .hero-section {
     padding: 10rem 0 6rem 0;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Background Image Slider */
+.hero-bg-slider {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.hero-bg-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: scale(1.1);
+    transition: opacity 1.5s ease-in-out, transform 7s ease-out;
+    will-change: opacity, transform;
+}
+
+.hero-bg-slide.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 1;
+}
+
+/* Dark Overlay so text is readable */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(5, 11, 20, 0.92) 0%,
+        rgba(5, 11, 20, 0.78) 45%,
+        rgba(5, 11, 20, 0.65) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Glow accents on top of overlay */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 15% 30%, rgba(99, 102, 241, 0.25), transparent 45%),
+        radial-gradient(circle at 85% 70%, rgba(6, 182, 212, 0.2), transparent 50%);
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Ensure content sits above the background */
+.hero-section .container {
+    position: relative;
+    z-index: 5;
 }
 
 .hero-grid {
     display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-columns: 1fr;
     gap: 3.5rem;
     align-items: center;
-}
-
-.hero-visual {
-    min-width: 0;
-    position: relative;
-}
-
-.hero-image {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1;
-    object-fit: cover;
-    border: 1px solid var(--border-glass);
-    border-radius: var(--radius-lg);
-    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45), 0 0 40px rgba(6, 182, 212, 0.12);
+    max-width: 900px;
 }
 
 .badge-group {
@@ -2075,7 +2124,6 @@ p {
    RESPONSIVE MEDIA QUERIES
    ========================================================================== */
 @media (max-width: 1024px) {
-    .hero-grid { grid-template-columns: 1fr; }
     .hero-title { font-size: 2.75rem; }
     .arch-flow-grid { grid-template-columns: 1fr; }
     .arch-connector { transform: rotate(90deg); margin: 0.5rem 0; }

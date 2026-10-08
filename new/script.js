@@ -55,6 +55,54 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ----------------------------------------------------------------------
+     * 1B. HERO BACKGROUND IMAGE AUTO SWAP SLIDER
+     * ---------------------------------------------------------------------- */
+    const heroSlides = document.querySelectorAll('.hero-bg-slide');
+    let currentSlide = 0;
+    let heroSliderInterval = null;
+    const SLIDE_DURATION = 5000; // 5 seconds per background image
+
+    function goToSlide(index) {
+        if (heroSlides.length === 0) return;
+
+        heroSlides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+
+        currentSlide = index;
+    }
+
+    function nextSlide() {
+        const nextIndex = (currentSlide + 1) % heroSlides.length;
+        goToSlide(nextIndex);
+    }
+
+    function startHeroSlider() {
+        if (heroSlides.length <= 1) return;
+        stopHeroSlider();
+        heroSliderInterval = setInterval(nextSlide, SLIDE_DURATION);
+    }
+
+    function stopHeroSlider() {
+        if (heroSliderInterval) {
+            clearInterval(heroSliderInterval);
+            heroSliderInterval = null;
+        }
+    }
+
+    // Pause when tab is hidden (performance optimization)
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            stopHeroSlider();
+        } else {
+            startHeroSlider();
+        }
+    });
+
+    // Kick off the slider
+    startHeroSlider();
+
+    /* ----------------------------------------------------------------------
      * 2. CORE MODULES TABS SYSTEM
      * ---------------------------------------------------------------------- */
     const tabBtns = document.querySelectorAll('.modules-tabs .tab-btn');
