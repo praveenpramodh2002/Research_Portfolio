@@ -2617,3 +2617,131 @@ p {
         animation: none;
     }
 }
+
+/* ==========================================================================
+   🕸️ SPIDER WEB ANIMATION - HERO SECTION (NEW - ADDED)
+   Interactive canvas-based particle network for the hero section
+   ========================================================================== */
+
+.spider-web-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4; /* Above bg slider & overlay, below content (z-index: 5) */
+    pointer-events: none; /* Let content remain clickable */
+    opacity: 0;
+    animation: spiderWebFadeIn 2s ease-out 0.5s forwards;
+}
+
+@keyframes spiderWebFadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 0.75; }
+}
+
+/* Optional: Slight glow pulse on the whole web */
+.spider-web-canvas.pulse {
+    animation: spiderWebFadeIn 2s ease-out 0.5s forwards,
+               webPulse 6s ease-in-out 2.5s infinite;
+}
+
+@keyframes webPulse {
+    0%, 100% { opacity: 0.75; }
+    50% { opacity: 0.9; }
+}
+
+/* Accessibility - disable for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .spider-web-canvas {
+        display: none;
+    }
+}
+
+/* Mobile - reduce visual noise */
+@media (max-width: 768px) {
+    .spider-web-canvas {
+        opacity: 0.4;
+    }
+}
+
+/* ==========================================================================
+   ✅ HERO RIGHT-SIDE TRANSPARENT LOGO (ADDED - APPENDED ONLY)
+   ========================================================================== */
+
+/* Make hero grid two columns so logo fits on the right */
+.hero-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    max-width: 1200px;
+}
+
+/* Right-side transparent logo box */
+.hero-logo-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 5;
+    animation: heroLogoFloat 6s ease-in-out infinite;
+}
+
+/* Transparent logo image */
+.hero-logo-img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    object-fit: contain;
+    background: transparent;
+    filter: drop-shadow(0 0 35px rgba(6, 182, 212, 0.45))
+            drop-shadow(0 0 70px rgba(99, 102, 241, 0.35));
+    transition: transform 0.5s ease;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Gentle hover lift (in case pointer-events re-enabled) */
+.hero-logo-box:hover .hero-logo-img {
+    transform: scale(1.04);
+}
+
+/* Soft floating animation */
+@keyframes heroLogoFloat {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-14px); }
+}
+
+/* Responsive: stack on tablets */
+@media (max-width: 1024px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        max-width: 900px;
+    }
+    .hero-logo-box {
+        order: -1;
+        margin-bottom: 1rem;
+    }
+    .hero-logo-img {
+        max-width: 320px;
+    }
+}
+
+/* Responsive: smaller logo on phones */
+@media (max-width: 768px) {
+    .hero-logo-box {
+        margin-bottom: 1.5rem;
+    }
+    .hero-logo-img {
+        max-width: 240px;
+        filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.4));
+    }
+    @keyframes heroLogoFloat {
+        0%, 100% { transform: translateY(0); }
+        50%      { transform: translateY(-8px); }
+    }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .hero-logo-box {
+        animation: none;
+    }
+}

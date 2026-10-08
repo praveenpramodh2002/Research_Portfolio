@@ -868,4 +868,255 @@ document.addEventListener('DOMContentLoaded', () => {
         timelineItems.forEach(item => timelineObserver.observe(item));
     }
 
+    /* ----------------------------------------------------------------------
+     * 7. 🕸️ SPIDER WEB ANIMATION - INTERACTIVE PARTICLE NETWORK
+     * Canvas-based animated web that reacts to mouse movement
+     * ---------------------------------------------------------------------- */
+    const spiderCanvas = document.getElementById('spiderWebCanvas');
+
+    if (spiderCanvas) {
+        const ctx = spiderCanvas.getContext('2d');
+        let particles = [];
+        let animationFrameId = null;
+        let mouse = { x: null, y: null, radius: 180 };
+
+        // Responsive particle density
+        function getParticleCount() {
+            const w = window.innerWidth;
+            if (w < 480) return 25;
+            if (w < 768) return 40;
+            if (w < 1200) return 60;
+            return 85;
+        }
+
+        // Resize canvas to match hero section
+        function resizeCanvas() {
+            const heroSection = document.querySelector('.hero-section');
+            if (!heroSection) return;
+            
+            const rect = heroSection.getBoundingClientRect();
+            spiderCanvas.width = rect.width;
+            spiderCanvas.height = rect.height;
+            
+            initParticles();
+        }
+
+        // Particle class
+        class Particle {
+            constructor() {
+                this.reset(true);
+                // Color palette matching PureTalk theme
+                const colors = [
+                    'rgba(6, 182, 212, ',   // cyan
+                    'rgba(99, 102, 241, ',  // indigo
+                    'rgba(139, 92, 246, ',  // purple
+                    'rgba(16, 185, 129, ',  // emerald
+                    'rgba(244, 63, 94, '    // rose
+                ];
+                this.colorBase = colors[Math.floor(Math.random() * colors.length)];
+            }
+
+            reset(initial = false) {
+                this.x = Math.random() * spiderCanvas.width;
+                this.y = initial 
+                    ? Math.random() * spiderCanvas.height 
+                    : Math.random() * spiderCanvas.height;
+                this.size = Math.random() * 2 + 1.2; // 1.2 - 3.2 px
+                this.baseX = this.x;
+                this.baseY = this.y;
+                // Slow drift velocities
+                this.vx = (Math.random() - 0.5) * 0.4;
+                this.vy = (Math.random() - 0.5) * 0.4;
+                this.density = Math.random() * 20 + 8;
+                this.pulsePhase = Math.random() * Math.PI * 2;
+                this.pulseSpeed = 0.02 + Math.random() * 0.03;
+            }
+
+            update() {
+                // Gentle floating movement
+                this.x += this.vx;
+                this.y += this.vy;
+
+                // Bounce off edges
+                if (this.x < 0 || this.x > spiderCanvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > spiderCanvas.height) this.vy *= -1;
+
+                // Keep in bounds
+                this.x = Math.max(0, Math.min(spiderCanvas.width, this.x));
+                this.y = Math.max(0, Math.min(spiderCanvas.height, this.y));
+
+                // Mouse interaction - particles gently pushed/pulled
+                if (mouse.x !== null && mouse.y !== null) {
+                    const dx = mouse.x - this.x;
+                    const dy = mouse.y - this.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < mouse.radius) {
+                        const force = (mouse.radius - distance) / mouse.radius;
+                        const directionX = dx / distance;
+                        const directionY = dy / distance;
+                        
+                        // Gentle pull toward mouse (creates web tension)
+                        this.x -= directionX * force * 1.5;
+                        this.y -= directionY * force * 1.5;
+                    }
+                }
+
+                // Pulse phase for glowing effect
+                this.pulsePhase += this.pulseSpeed;
+            }
+
+            draw() {
+                const pulse = Math.sin(this.pulsePhase) * 0.5 + 0.5;
+                const alpha = 0.5 + pulse * 0.5;
+                const radius = this.size + pulse * 0.8;
+
+                // Outer glow
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, radius * 3, 0, Math.PI * 2);
+                const gradient = ctx.createRadialGradient(
+                    this.x, this.y, 0,
+                    this.x, this.y, radius * 3
+                );
+                gradient.addColorStop(0, this.colorBase + (alpha * 0.4) + ')');
+                gradient.addColorStop(1, this.colorBase + '0)');
+                ctx.fillStyle = gradient;
+                ctx.fill();
+
+                // Core particle
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, radius, 0, Math.PI * 2);
+                ctx.fillStyle = this.colorBase + alpha + ')';
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            const count = getParticleCount();
+            for (let i = 0; i < count; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        // Draw web lines between nearby particles
+        function connectParticles() {
+            const maxDistance = window.innerWidth < 768 ? 100 : 140;
+            
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < maxDistance) {
+                        const opacity = (1 - distance / maxDistance) * 0.35;
+                        
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        
+                        // Gradient line between two particle colors
+                        const grad = ctx.createLinearGradient(
+                            particles[i].x, particles[i].y,
+                            particles[j].x, particles[j].y
+                        );
+                        grad.addColorStop(0, particles[i].colorBase + opacity + ')');
+                        grad.addColorStop(1, particles[j].colorBase + opacity + ')');
+                        
+                        ctx.strokeStyle = grad;
+                        ctx.lineWidth = 0.7;
+                        ctx.stroke();
+                    }
+                }
+
+                // Connect to mouse position (like a spider web strand being pulled)
+                if (mouse.x !== null && mouse.y !== null) {
+                    const dx = particles[i].x - mouse.x;
+                    const dy = particles[i].y - mouse.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < mouse.radius) {
+                        const opacity = (1 - distance / mouse.radius) * 0.5;
+                        
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(mouse.x, mouse.y);
+                        ctx.strokeStyle = `rgba(6, 182, 212, ${opacity})`;
+                        ctx.lineWidth = 0.9;
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        // Main animation loop
+        function animateWeb() {
+            ctx.clearRect(0, 0, spiderCanvas.width, spiderCanvas.height);
+
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            connectParticles();
+
+            animationFrameId = requestAnimationFrame(animateWeb);
+        }
+
+        // Mouse tracking (relative to hero section)
+        const heroSection = document.querySelector('.hero-section');
+        
+        heroSection.addEventListener('mousemove', (e) => {
+            const rect = heroSection.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+        });
+
+        heroSection.addEventListener('mouseleave', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        // Touch support for mobile
+        heroSection.addEventListener('touchmove', (e) => {
+            if (e.touches.length > 0) {
+                const rect = heroSection.getBoundingClientRect();
+                mouse.x = e.touches[0].clientX - rect.left;
+                mouse.y = e.touches[0].clientY - rect.top;
+            }
+        }, { passive: true });
+
+        heroSection.addEventListener('touchend', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        // Window resize handler (debounced)
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(resizeCanvas, 250);
+        });
+
+        // Pause animation when tab is hidden (performance)
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                if (animationFrameId) {
+                    cancelAnimationFrame(animationFrameId);
+                    animationFrameId = null;
+                }
+            } else {
+                if (!animationFrameId) {
+                    animateWeb();
+                }
+            }
+        });
+
+        // Initialize
+        resizeCanvas();
+        animateWeb();
+        spiderCanvas.classList.add('pulse');
+    }
+
 });
