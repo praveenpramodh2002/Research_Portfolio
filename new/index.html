@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PureTalk | AI-Powered Multimodal Toxicity Filtering & Adaptive Emotional Shielding</title>
+    <meta name="description" content="PureTalk is an integrated AI moderation platform providing personalized emotional shielding, Singlish & English multimodal toxicity detection, and explainable AI enforcement. SLIIT Research Project R26-IT-008.">
+    <meta name="keywords" content="PureTalk, AI Moderation, Singlish Toxicity Detection, Emotional Shielding, XAI, MobileNetV2, BiLSTM, SLIIT, CoEAI">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Background Grid & Glowing Orbs -->
+    <div class="bg-decoration">
+        <div class="grid-pattern"></div>
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="navbar-header" id="navbar">
+        <div class="container navbar-container">
+            <a href="#" class="brand-logo">
+                <div class="logo-shield">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="brand-name">PURE<span class="brand-highlight">TALK</span></span>
+                    <span class="brand-sub">SLIIT CoEAI R26-IT-008</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="#hero" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="#about-us" class="nav-link"><i class="fa-solid fa-users-rays"></i> About Us</a>
+                <a href="#architecture" class="nav-link"><i class="fa-solid fa-sitemap"></i> Architecture</a>
+                <a href="#timeline" class="nav-link"><i class="fa-solid fa-timeline"></i> Timeline</a>
+                <a href="#documents" class="nav-link"><i class="fa-solid fa-folder-open"></i> Documents</a>
+                <a href="#team" class="nav-link"><i class="fa-solid fa-users-gear"></i> Team</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Wrapper -->
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero-section" id="hero">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <div class="badge-group">
+                            <span class="badge badge-sliit"><i class="fa-solid fa-graduation-cap"></i> SLIIT IT4010 Research</span>
+                            <span class="badge badge-id"><i class="fa-solid fa-hashtag"></i> R26-IT-008</span>
+                            <span class="badge badge-ai"><i class="fa-solid fa-brain"></i> CoEAI Project</span>
+                        </div>
+
+                        <h1 class="hero-title">
+                            Personalized Emotional Shielding & <span class="gradient-text">Adaptive Toxicity Filtering</span> System
+                        </h1>
+
+                        <p class="hero-description">
+                            PureTalk is an integrated, language-aware AI moderation platform for Sri Lankan & global digital spaces. It detects toxicity across <strong>Singlish/English text, images, speech, and video</strong>, delivers personalized protective shielding, and applies explainable, profile-based behavioral enforcement.
+                        </p>
+
+                        <div class="hero-stats">
+                            <div class="stat-pill">
+                                <span class="stat-val">99.2%</span>
+                                <span class="stat-lbl">Behavior Risk Acc.</span>
+                            </div>
+                            <div class="stat-pill">
+                                <span class="stat-val">96.8%</span>
+                                <span class="stat-lbl">AESM Shielding Acc.</span>
+                            </div>
+                            <div class="stat-pill">
+                                <span class="stat-val">92.0%</span>
+                                <span class="stat-lbl">Image Toxicity Acc.</span>
+                            </div>
+                            <div class="stat-pill">
+                                <span class="stat-val">88.4%</span>
+                                <span class="stat-lbl">Speech-Emotion Acc.</span>
+                            </div>
+                        </div>
+
+                        <div class="hero-cta">
+                            <a href="#documents" class="btn btn-glow">
+                                <i class="fa-solid fa-file-pdf"></i> Read Common Report
+                            </a>
+                            <a href="#architecture" class="btn btn-outline">
+                                <i class="fa-solid fa-diagram-project"></i> Explore System Architecture
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT US SECTION -->
+        <section class="section about-us-section" id="about-us">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag"><i class="fa-solid fa-users-rays"></i> Who We Are</span>
+                    <h2 class="section-title">About PureTalk & Our Research Team</h2>
+                    <p class="section-subtitle">A collaborative AI research initiative by the Centre of Excellence for Artificial Intelligence (CoEAI) at SLIIT.</p>
+                </div>
+
+                <div class="grid grid-2">
+                    
+                    <!-- Left: Mission & Vision Card -->
+                    <div class="glass-card about-mission-box">
+                        <div>
+                            <h3><i class="fa-solid fa-bullseye text-gradient"></i> Our Research Mission</h3>
+                            <p class="mt-3">
+                                PureTalk (Project ID: <strong>R26-IT-008</strong>) was founded by a four-person research team at the <strong>Sri Lanka Institute of Information Technology (SLIIT)</strong>. Our mission is to transform automated social media moderation from blunt, English-only deletion into an <em>intelligent, language-aware, and emotionally protective ecosystem</em>.
+                            </p>
+                            <p>
+                                By integrating deep sequence modeling for Romanized Sinhala (Singlish), pre-upload MobileNetV2 image inspection, adaptive UI emotional shielding (AESM), and SHAP explainable risk profiling, we bridge the gap between AI accuracy and human dignity.
+                            </p>
+                        </div>
+
+                        <!-- 4 Core Pillars -->
+                        <div class="values-pill-grid">
+                            <div class="value-pill">
+                                <i class="fa-solid fa-language text-rose"></i>
+                                <div>
+                                    <h5>Singlish NLP</h5>
+                                    <p>Code-mixed language awareness</p>
+                                </div>
+                            </div>
+                            <div class="value-pill">
+                                <i class="fa-solid fa-shield-heart text-purple"></i>
+                                <div>
+                                    <h5>Empathy First</h5>
+                                    <p>5-level adaptive shielding</p>
+                                </div>
+                            </div>
+                            <div class="value-pill">
+                                <i class="fa-solid fa-eye text-cyan"></i>
+                                <div>
+                                    <h5>XAI Transparency</h5>
+                                    <p>SHAP & LIME explanations</p>
+                                </div>
+                            </div>
+                            <div class="value-pill">
+                                <i class="fa-solid fa-gavel text-emerald"></i>
+                                <div>
+                                    <h5>Fair Enforcement</h5>
+                                    <p>Graduated behavioral sanctions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Key Highlights Grid & Stats -->
+                    <div class="about-highlight-grid">
+                        
+                        <div class="glass-card stat-card-item">
+                            <div class="stat-number text-rose">4</div>
+                            <h4>Integrated Modules</h4>
+                            <p class="text-sub">Multimodal text, image scan, AESM shielding & XAI enforcement.</p>
+                        </div>
+
+                        <div class="glass-card stat-card-item">
+                            <div class="stat-number text-cyan">99.2%</div>
+                            <h4>Risk Classification</h4>
+                            <p class="text-sub">Accuracy achieved by Random Forest risk profiling model.</p>
+                        </div>
+
+                        <div class="glass-card stat-card-item">
+                            <div class="stat-number text-purple">96.8%</div>
+                            <h4>Shielding Agreement</h4>
+                            <p class="text-sub">BiLSTM-Attention AESM protective action accuracy.</p>
+                        </div>
+
+                        <div class="glass-card stat-card-item">
+                            <div class="stat-number text-emerald">2</div>
+                            <h4>UN SDGs Impacted</h4>
+                            <p class="text-sub">Direct alignment with UN SDG 3 (Well-being) & SDG 16 (Peace).</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Academic Institution Banner -->
+                <div class="institution-banner">
+                    <div class="inst-logo-group">
+                        <div class="inst-icon">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div class="inst-details">
+                            <h4>Sri Lanka Institute of Information Technology (SLIIT)</h4>
+                            <p class="text-sub">Faculty of Computing • Department of Information Technology • Centre of Excellence for Artificial Intelligence (CoEAI)</p>
+                        </div>
+                    </div>
+                    <a href="#team" class="btn btn-outline btn-sm">
+                        <i class="fa-solid fa-users"></i> Meet Team Members
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        
+
+        <!-- SYSTEM ARCHITECTURE -->
+        <section class="section architecture-section" id="architecture">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag"><i class="fa-solid fa-layer-group"></i> Technical Blueprint</span>
+                    <h2 class="section-title">Integrated System Architecture</h2>
+                    <p class="section-subtitle">A unified moderation pipeline built on Django REST Framework with token-based security & component isolation.</p>
+                </div>
+
+                <!-- Tech Stack Pills -->
+                    <div class="tech-stack-row">
+                        <span class="tech-pill"><i class="fa-brands fa-python"></i> Python 3.10</span>
+                        <span class="tech-pill"><i class="fa-solid fa-cubes"></i> Django REST Framework</span>
+                        <span class="tech-pill"><i class="fa-solid fa-fire"></i> TensorFlow / Keras</span>
+                        <span class="tech-pill"><i class="fa-solid fa-network-wired"></i> MobileNetV2</span>
+                        <span class="tech-pill"><i class="fa-solid fa-wave-square"></i> wav2vec2 / Whisper</span>
+                        <span class="tech-pill"><i class="fa-solid fa-chart-pie"></i> scikit-learn & SHAP</span>
+                        <span class="tech-pill"><i class="fa-brands fa-react"></i> Next.js / HTML5</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <!-- INTERACTIVE LIVE AI DEMO SANDBOX -->
+        <section class="section demo-section" id="demo">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Interactive Sandbox</span>
+                    <h2 class="section-title">Experience PureTalk Live AI Moderation</h2>
+                    <p class="section-subtitle">Simulate real-time text toxicity scoring, Singlish slur normalization, image pre-upload check, and AESM protective shielding.</p>
+                </div>
+
+                <div class="demo-card glass-card">
+                    <div class="demo-nav-tabs">
+                        <button class="demo-tab active" data-mode="text">
+                            <i class="fa-solid fa-comment-dots"></i> Text & Singlish Moderation
+                        </button>
+                        <button class="demo-tab" data-mode="image">
+                            <i class="fa-solid fa-file-image"></i> Image Pre-Upload Check
+                        </button>
+                        <button class="demo-tab" data-mode="audio">
+                            <i class="fa-solid fa-microphone-lines"></i> Speech & Emotion Fusion
+                        </button>
+                        <button class="demo-tab" data-mode="profile">
+                            <i class="fa-solid fa-user-shield"></i> User Risk & XAI (SHAP)
+                        </button>
+                    </div>
+
+                    <!-- DEMO PANEL 1: TEXT & SINGLISH -->
+                    <div class="demo-panel active" id="demo-text">
+                        <div class="grid grid-2">
+                            <div class="demo-input-box">
+                                <label for="textSampleSelect"><strong>Preset Test Cases (Singlish / English):</strong></label>
+                                <select id="textSampleSelect" class="form-control mb-3">
+                                    <option value="preset1">Singlish Toxic: "Mokauda me pal hora, thota monawada puluwan" (Insult + Toxic)</option>
+                                    <option value="preset2">Singlish Threat: "Umbala okkotama gahala maranawa balapan" (Threat + Severe Toxic)</option>
+                                    <option value="preset3">English Harassment: "You are completely useless, go away and shut up!" (Insult)</option>
+                                    <option value="preset4">Safe Positive: "Subha aluth awuruddak wewa yaluwane! Great research work!" (Clean)</option>
+                                    <option value="custom">-- Type Custom Message Below --</option>
+                                </select>
+
+                                <label for="demoTextInput"><strong>Input Message Content:</strong></label>
+                                <textarea id="demoTextInput" class="form-control" rows="4" placeholder="Type Singlish or English message here..."></textarea>
+
+                                <div class="sensitivity-selector mt-3">
+                                    <label><strong>User Sensitivity Profile (AESM Input):</strong></label>
+                                    <div class="radio-group">
+                                        <label><input type="radio" name="sensitivity" value="standard" checked> Standard User</label>
+                                        <label><input type="radio" name="sensitivity" value="sensitive"> Highly Sensitive User</label>
+                                        <label><input type="radio" name="sensitivity" value="victim"> Distressed Victim</label>
+                                    </div>
+                                </div>
+
+                                <button id="btnAnalyzeText" class="btn btn-glow w-100 mt-4">
+                                    <i class="fa-solid fa-microchip"></i> Run PureTalk AI Analysis
+                                </button>
+                            </div>
+
+                            <!-- Analysis Results Output -->
+                            <div class="demo-output-box">
+                                <div class="output-header">
+                                    <h4><i class="fa-solid fa-chart-simple text-cyan"></i> Real-Time AI Score & Shield Response</h4>
+                                    <span id="overallToxicityBadge" class="badge badge-safe">CLEAN CONTENT</span>
+                                </div>
+
+                                <div id="aesmActionBox" class="aesm-action-banner allow">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <div>
+                                        <strong id="aesmActionTitle">AESM Action: ALLOW POST</strong>
+                                        <p id="aesmActionDesc">Content meets safety standards. Displayed normally to reader.</p>
+                                    </div>
+                                </div>
+
+                                <div class="toxicity-breakdown mt-4">
+                                    <h5>6 Toxicity Categories (BiLSTM Classifier)</h5>
+                                    
+                                    <div class="bar-group">
+                                        <div class="bar-label"><span>Toxic</span><span id="valToxic">4.2%</span></div>
+                                        <div class="bar-track"><div id="barToxic" class="bar-fill bg-cyan" style="width: 4.2%;"></div></div>
+                                    </div>
+                                    <div class="bar-group">
+                                        <div class="bar-label"><span>Severe Toxic</span><span id="valSevere">1.0%</span></div>
+                                        <div class="bar-track"><div id="barSevere" class="bar-fill bg-rose" style="width: 1.0%;"></div></div>
+                                    </div>
+                                    <div class="bar-group">
+                                        <div class="bar-label"><span>Obscene</span><span id="valObscene">2.1%</span></div>
+                                        <div class="bar-track"><div id="barObscene" class="bar-fill bg-purple" style="width: 2.1%;"></div></div>
+                                    </div>
+                                    <div class="bar-group">
+                                        <div class="bar-label"><span>Threat</span><span id="valThreat">0.5%</span></div>
+                                        <div class="bar-track"><div id="barThreat" class="bar-fill bg-amber" style="width: 0.5%;"></div></div>
+                                    </div>
+                                    <div class="bar-group">
+                                        <div class="bar-label"><span>Insult</span><span id="valInsult">3.8%</span></div>
+                                        <div class="bar-track"><div id="barInsult" class="bar-fill bg-rose" style="width: 3.8%;"></div></div>
+                                    </div>
+                                    <div class="bar-group">
+                                        <div class="bar-label"><span>Identity Hate</span><span id="valIdentity">0.8%</span></div>
+                                        <div class="bar-track"><div id="barIdentity" class="bar-fill bg-indigo" style="width: 0.8%;"></div></div>
+                                    </div>
+                                </div>
+
+                                <div class="xai-highlight-box mt-3">
+                                    <h5><i class="fa-solid fa-eye text-emerald"></i> Word-Level Explanation (LIME)</h5>
+                                    <div id="limeTokens" class="lime-tokens-wrap">
+                                        <span class="token token-clean">Content</span> <span class="token token-clean">tokenized</span> <span class="token token-clean">successfully</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DEMO PANEL 2: IMAGE PRE-UPLOAD -->
+                    <div class="demo-panel" id="demo-image">
+                        <div class="grid grid-2">
+                            <div class="demo-input-box">
+                                <h4>MobileNetV2 Image Scan Simulator (Component 2)</h4>
+                                <p>Select an image preset to simulate the pre-upload quick-check API:</p>
+                                
+                                <div class="image-presets-grid mb-3">
+                                    <div class="img-preset-card active" data-img="safe">
+                                        <div class="preset-preview bg-preset-safe"><img src="images/images1.png" alt="Safe Image" class="preset-img-thumb"></div>
+                                        <span>Safe Image</span>
+                                    </div>
+                                    <div class="img-preset-card" data-img="meme">
+                                        <div class="preset-preview bg-preset-meme"><img src="images/images2.jpg" alt="Meme Image" class="preset-img-thumb"></div>
+                                        <span>Cyberbullying Meme</span>
+                                    </div>
+                                    <div class="img-preset-card" data-img="hate">
+                                        <div class="preset-preview bg-preset-hate"><img src="images/images3.jpg" alt="Hate Screenshot" class="preset-img-thumb"></div>
+                                        <span>Hate Screenshot</span>
+                                    </div>
+                                </div>
+
+                                <button id="btnAnalyzeImage" class="btn btn-glow w-100">
+                                    <i class="fa-solid fa-shield-virus"></i> Scan Image Pre-Upload
+                                </button>
+                            </div>
+
+                            <div class="demo-output-box">
+                                <div class="image-scan-result-card">
+                                    <div class="scan-visual-wrapper">
+                                        <div id="imgPreviewBox" class="img-display-placeholder">
+                                            <i class="fa-solid fa-photo-film"></i>
+                                            <span>Image Ready for Pre-Upload Inspection</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="scan-status-details mt-3">
+                                        <div class="d-flex justify-between">
+                                            <span>MobileNetV2 Toxicity Score:</span>
+                                            <strong id="imgToxicityScore" class="text-emerald">12.4% (Safe)</strong>
+                                        </div>
+                                        <div class="d-flex justify-between mt-2">
+                                            <span>Upload Decision:</span>
+                                            <strong id="imgUploadDecision" class="badge badge-safe">APPROVED FOR UPLOAD</strong>
+                                        </div>
+                                        <div class="d-flex justify-between mt-2">
+                                            <span>Scan Time:</span>
+                                            <small class="text-sub">118ms (MobileNetV2 Feature Vector)</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DEMO PANEL 3: AUDIO / SPEECH -->
+                    <div class="demo-panel" id="demo-audio">
+                        <div class="grid grid-2">
+                            <div class="demo-input-box">
+                                <h4>Audio Speech Transcription & Emotion Fusion (Component 1)</h4>
+                                <p>Select a simulated voice note sample to evaluate combined text + vocal emotion evidence:</p>
+
+                                <div class="audio-samples-list">
+                                    <div class="audio-sample-card active" data-audio="calm">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                        <div>
+                                            <strong>Calm Voice Note (English)</strong>
+                                            <small>"Thank you for submitting your research paper."</small>
+                                        </div>
+                                    </div>
+                                    <div class="audio-sample-card" data-audio="angry">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                        <div>
+                                            <strong>Aggressive Voice Note (Singlish Slur)</strong>
+                                            <small>"Mokauda yakathiyaganne ballo, thota maranawa!"</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button id="btnAnalyzeAudio" class="btn btn-glow w-100 mt-4">
+                                    <i class="fa-solid fa-waveform"></i> Fuse Speech ASR & Emotion
+                                </button>
+                            </div>
+
+                            <div class="demo-output-box">
+                                <div class="audio-result-display">
+                                    <div class="audio-waveform-visual">
+                                        <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                                        <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                                        <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                                    </div>
+
+                                    <div class="transcript-box mt-3">
+                                        <small class="text-sub"><i class="fa-solid fa-quote-left"></i> ASR Transcript (wav2vec2):</small>
+                                        <p id="audioTranscriptText" class="mt-1">"Thank you for submitting your research paper."</p>
+                                    </div>
+
+                                    <div class="emotion-fusion-matrix mt-3">
+                                        <div class="d-flex justify-between">
+                                            <span>Text Toxicity Baseline:</span>
+                                            <strong id="audioTextScore">2.1%</strong>
+                                        </div>
+                                        <div class="d-flex justify-between mt-2">
+                                            <span>Vocal Emotion Detected:</span>
+                                            <span id="vocalEmotionTag" class="badge badge-safe">Neutral / Calm</span>
+                                        </div>
+                                        <div class="d-flex justify-between mt-2">
+                                            <span>Fused Final Score (MATS):</span>
+                                            <strong id="fusedFinalScore" class="text-cyan">2.1% (Allowed)</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DEMO PANEL 4: USER RISK & SHAP -->
+                    <div class="demo-panel" id="demo-profile">
+                        <div class="grid grid-2">
+                            <div class="demo-input-box">
+                                <h4>Behavioral Profile & SHAP Explanation (Component 4)</h4>
+                                <p>Select a user profile tier to calculate persistent toxicity risk and graduated enforcement:</p>
+
+                                <div class="user-tier-selector">
+                                    <button class="tier-btn active" data-tier="0">
+                                        <i class="fa-solid fa-user-check"></i>
+                                        <span>Tier 0: Clean User</span>
+                                    </button>
+                                    <button class="tier-btn" data-tier="1">
+                                        <i class="fa-solid fa-user-clock"></i>
+                                        <span>Tier 1: Minor Warning</span>
+                                    </button>
+                                    <button class="tier-btn" data-tier="2">
+                                        <i class="fa-solid fa-user-minus"></i>
+                                        <span>Tier 2: Muted Abuser</span>
+                                    </button>
+                                    <button class="tier-btn" data-tier="3">
+                                        <i class="fa-solid fa-user-slash"></i>
+                                        <span>Tier 3: Repeat Offender (Ban)</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="demo-output-box">
+                                <div class="shap-explanation-card">
+                                    <div class="d-flex justify-between align-center">
+                                        <h4>Random Forest Risk Prediction</h4>
+                                        <span id="riskTierBadge" class="badge badge-safe">LOW RISK (TIER 0)</span>
+                                    </div>
+
+                                    <div class="sanction-banner mt-3 p-3 radius-md bg-dark-subtle" id="sanctionBox">
+                                        <i class="fa-solid fa-gavel text-emerald"></i>
+                                        <span id="sanctionText">Applied Sanction: None (Full Posting Privileges)</span>
+                                    </div>
+
+                                    <h5 class="mt-4"><i class="fa-solid fa-chart-bar text-purple"></i> SHAP Feature Impact Breakdown</h5>
+                                    
+                                    <div class="shap-bar-item mt-2">
+                                        <div class="d-flex justify-between">
+                                            <small>30-Day Toxic Post Count</small>
+                                            <small id="shapVal1" class="text-emerald">+0.02</small>
+                                        </div>
+                                        <div class="bar-track"><div id="shapBar1" class="bar-fill bg-emerald" style="width: 5%;"></div></div>
+                                    </div>
+
+                                    <div class="shap-bar-item mt-2">
+                                        <div class="d-flex justify-between">
+                                            <small>Mean Insult Score Intensity</small>
+                                            <small id="shapVal2" class="text-emerald">+0.04</small>
+                                        </div>
+                                        <div class="bar-track"><div id="shapBar2" class="bar-fill bg-emerald" style="width: 8%;"></div></div>
+                                    </div>
+
+                                    <div class="shap-bar-item mt-2">
+                                        <div class="d-flex justify-between">
+                                            <small>Social Network Out-Degree Centrality</small>
+                                            <small id="shapVal3" class="text-emerald">+0.01</small>
+                                        </div>
+                                        <div class="bar-track"><div id="shapBar3" class="bar-fill bg-emerald" style="width: 3%;"></div></div>
+                                    </div>
+
+                                    <div class="shap-bar-item mt-2">
+                                        <div class="d-flex justify-between">
+                                            <small>Recency Decay Factor</small>
+                                            <small id="shapVal4" class="text-emerald">+0.01</small>
+                                        </div>
+                                        <div class="bar-track"><div id="shapBar4" class="bar-fill bg-emerald" style="width: 2%;"></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        
+
+        
+
+        <!-- PROJECT TIMELINE ROADMAP -->
+        <section class="section timeline-section" id="timeline">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag"><i class="fa-solid fa-timeline"></i> Milestones & Roadmap</span>
+                    <h2 class="section-title">Project Execution Timeline</h2>
+                    <p class="section-subtitle">Key research milestones completed during the SLIIT IT4010 Research Project (Project ID: R26-IT-008).</p>
+                </div>
+
+                <div class="timeline-roadmap">
+                    
+                    <!-- Milestone 1 -->
+                    <div class="timeline-item left">
+                        <div class="timeline-dot"></div>
+                        <div class="glass-card timeline-card">
+                            <span class="timeline-date-badge"><i class="fa-solid fa-calendar-day"></i> February 2026</span>
+                            <h3 class="timeline-title">Project Proposal & TAF Submission</h3>
+                            <p class="timeline-desc">Topic Assessment Form (TAF) approval, research problem definition across multimodal content (Singlish text, images, speech, behavior), literature review, and supervisor allocation.</p>
+                            <div class="timeline-tags">
+                                <span class="timeline-tag">TAF Submitted</span>
+                                <span class="timeline-tag">Literature Review</span>
+                                <span class="timeline-tag">Scope Approved</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 2 -->
+                    <div class="timeline-item right">
+                        <div class="timeline-dot"></div>
+                        <div class="glass-card timeline-card">
+                            <span class="timeline-date-badge"><i class="fa-solid fa-calendar-day"></i> May 2026</span>
+                            <h3 class="timeline-title">Progress Review 1 - Data & Preprocessing</h3>
+                            <p class="timeline-desc">Jigsaw Toxic dataset curation, Singlish slur-normalization lexicon creation, MobileNetV2 image feature extraction pipeline, and speech ASR transcription benchmarking.</p>
+                            <div class="timeline-tags">
+                                <span class="timeline-tag">Singlish Lexicon</span>
+                                <span class="timeline-tag">Dataset Cleaned</span>
+                                <span class="timeline-tag">PR1 Defense</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 3 -->
+                    <div class="timeline-item left">
+                        <div class="timeline-dot"></div>
+                        <div class="glass-card timeline-card">
+                            <span class="timeline-date-badge"><i class="fa-solid fa-calendar-day"></i> July 2026</span>
+                            <h3 class="timeline-title">Progress Review 2 - Model Training & Baseline</h3>
+                            <p class="timeline-desc">BiLSTM text categorization, speech-emotion fusion bounded evidence, AESM 5-action shielding classifier, Random Forest behavioral risk modeling (99.2% Acc), and initial DRF APIs.</p>
+                            <div class="timeline-tags">
+                                <span class="timeline-tag">BiLSTM Trained</span>
+                                <span class="timeline-tag">AESM Actions</span>
+                                <span class="timeline-tag">PR2 Passed</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 4 -->
+                    <div class="timeline-item right">
+                        <div class="timeline-dot"></div>
+                        <div class="glass-card timeline-card">
+                            <span class="timeline-date-badge"><i class="fa-solid fa-calendar-day"></i> September 2026</span>
+                            <h3 class="timeline-title">Final System Integration & XAI Pipeline</h3>
+                            <p class="timeline-desc">End-to-end component integration on Django REST Framework, Knox token security, audit trail tables, LIME word highlights & SHAP feature attributions integration.</p>
+                            <div class="timeline-tags">
+                                <span class="timeline-tag">Integrated DB</span>
+                                <span class="timeline-tag">LIME / SHAP</span>
+                                <span class="timeline-tag">DRF Backend</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 5 -->
+                    <div class="timeline-item left">
+                        <div class="timeline-dot"></div>
+                        <div class="glass-card timeline-card">
+                            <span class="timeline-date-badge"><i class="fa-solid fa-calendar-day"></i> October 2026</span>
+                            <h3 class="timeline-title">Camera-Ready Common Report & Final Defense</h3>
+                            <p class="timeline-desc">Final 60+ page Common Integrated Solution Report (Project ID: R26-IT-008) submission, individual component theses, and final defense presentation to SLIIT CoEAI panel.</p>
+                            <div class="timeline-tags">
+                                <span class="timeline-tag">Common Report</span>
+                                <span class="timeline-tag">Thesis Defense</span>
+                                <span class="timeline-tag">CoEAI Completed</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- RESEARCH DOCUMENTS & DELIVERABLES (SLIIT STYLE REPOSITORY) -->
+        <section class="section docs-section" id="documents">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag"><i class="fa-solid fa-folder-open"></i> Project Repository</span>
+                    <h2 class="section-title">Research Documents & Deliverables</h2>
+                    <p class="section-subtitle">Access camera-ready common reports, individual component thesis publications, presentation decks, and assessment logbooks.</p>
+                </div>
+
+                <!-- Document Filter & Search Toolbar -->
+                <div class="doc-filter-toolbar">
+                    <div class="doc-filter-tabs">
+                        <button class="doc-filter-btn active" data-filter="all">
+                            <i class="fa-solid fa-border-all"></i> All Documents
+                        </button>
+                        <button class="doc-filter-btn" data-filter="group">
+                            <i class="fa-solid fa-users"></i> Group Reports
+                        </button>
+                        <button class="doc-filter-btn" data-filter="individual">
+                            <i class="fa-solid fa-user-graduate"></i> Individual Theses
+                        </button>
+                        <button class="doc-filter-btn" data-filter="proposal">
+                            <i class="fa-solid fa-file-contract"></i> Proposals & TAF
+                        </button>
+                        <button class="doc-filter-btn" data-filter="logbook">
+                            <i class="fa-solid fa-book"></i> Logbooks & Reviews
+                        </button>
+                    </div>
+
+                    <div class="doc-search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="docSearchInput" class="doc-search-input" placeholder="Search documents, authors, topics...">
+                    </div>
+                </div>
+
+                <!-- Documents Grid -->
+                <div class="grid grid-3" id="docGrid">
+
+                    <div class="glass-card doc-box" data-category="group" data-title="TAF Report" data-author="Group R26-IT-008">
+                        <div>
+                            <div class="doc-header-row">
+                                <div class="doc-icon"><i class="fa-solid fa-file-pdf text-rose"></i></div>
+                                <div class="doc-badge-group">
+                                    <span class="doc-type-tag type-group">Group</span>
+                                    <span class="doc-meta-badge">PDF • 3.2 MB</span>
+                                </div>
+                            </div>
+                            <h4>TAF Report</h4>
+                            <div class="doc-author-info">
+                                <i class="fa-solid fa-user"></i> <span>Group R26-IT-008</span>
+                            </div>
+                        </div>
+                        <div class="doc-actions mt-3">
+                            <button class="btn btn-outline btn-sm w-100"><i class="fa-solid fa-eye"></i> View</button>
+                            <button class="btn btn-primary btn-sm"><i class="fa-solid fa-download"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="glass-card doc-box" data-category="individual" data-title="Proposal Document Toxicity Image Detection Module" data-author="Perera M D S">
+                        <div>
+                            <div class="doc-header-row">
+                                <div class="doc-icon"><i class="fa-solid fa-file-word text-cyan"></i></div>
+                                <div class="doc-badge-group">
+                                    <span class="doc-type-tag type-individual">Individual</span>
+                                    <span class="doc-meta-badge">PDF • 4.1 MB</span>
+                                </div>
+                            </div>
+                            <h4>Proposal Document Toxicity Image Detection Module</h4>
+                            <div class="doc-author-info">
+                                <i class="fa-solid fa-user"></i> <span>Perera M D S</span>
+                            </div>
+                        </div>
+                        <div class="doc-actions mt-3">
+                            <button class="btn btn-outline btn-sm w-100"><i class="fa-solid fa-eye"></i> View</button>
+                            <button class="btn btn-primary btn-sm"><i class="fa-solid fa-download"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="glass-card doc-box" data-category="individual" data-title="Proposal Document Multimodal Text Toxicity Detection" data-author="Tharindi W.A.K">
+                        <div>
+                            <div class="doc-header-row">
+                                <div class="doc-icon"><i class="fa-solid fa-file-word text-cyan"></i></div>
+                                <div class="doc-badge-group">
+                                    <span class="doc-type-tag type-individual">Individual</span>
+                                    <span class="doc-meta-badge">PDF • 4.0 MB</span>
+                                </div>
+                            </div>
+                            <h4>Proposal Document Multimodal Text Toxicity Detection</h4>
+                            <div class="doc-author-info">
+                                <i class="fa-solid fa-user"></i> <span>Tharindi W.A.K</span>
+                            </div>
+                        </div>
+                        <div class="doc-actions mt-3">
+                            <button class="btn btn-outline btn-sm w-100"><i class="fa-solid fa-eye"></i> View</button>
+                            <button class="btn btn-primary btn-sm"><i class="fa-solid fa-download"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="glass-card doc-box" data-category="individual" data-title="Proposal Document Adaptive Emotional Shielding Module" data-author="Praveen H.G">
+                        <div>
+                            <div class="doc-header-row">
+                                <div class="doc-icon"><i class="fa-solid fa-file-word text-cyan"></i></div>
+                                <div class="doc-badge-group">
+                                    <span class="doc-type-tag type-individual">Individual</span>
+                                    <span class="doc-meta-badge">PDF • 4.3 MB</span>
+                                </div>
+                            </div>
+                            <h4>Proposal Document Adaptive Emotional Shielding Module</h4>
+                            <div class="doc-author-info">
+                                <i class="fa-solid fa-user"></i> <span>Praveen H.G</span>
+                            </div>
+                        </div>
+                        <div class="doc-actions mt-3">
+                            <button class="btn btn-outline btn-sm w-100"><i class="fa-solid fa-eye"></i> View</button>
+                            <button class="btn btn-primary btn-sm"><i class="fa-solid fa-download"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="glass-card doc-box" data-category="individual" data-title="Proposal Document Profile-Based Toxic Behavior Enforcement" data-author="Manohara H.U.K.R.T">
+                        <div>
+                            <div class="doc-header-row">
+                                <div class="doc-icon"><i class="fa-solid fa-file-word text-cyan"></i></div>
+                                <div class="doc-badge-group">
+                                    <span class="doc-type-tag type-individual">Individual</span>
+                                    <span class="doc-meta-badge">PDF • 3.9 MB</span>
+                                </div>
+                            </div>
+                            <h4>Proposal Document Profile-Based Toxic Behavior Enforcement</h4>
+                            <div class="doc-author-info">
+                                <i class="fa-solid fa-user"></i> <span>Manohara H.U.K.R.T</span>
+                            </div>
+                        </div>
+                        <div class="doc-actions mt-3">
+                            <button class="btn btn-outline btn-sm w-100"><i class="fa-solid fa-eye"></i> View</button>
+                            <button class="btn btn-primary btn-sm"><i class="fa-solid fa-download"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="glass-card doc-box" data-category="group" data-title="Progress Presentation" data-author="Group R26-IT-008">
+                        <div>
+                            <div class="doc-header-row">
+                                <div class="doc-icon"><i class="fa-solid fa-file-powerpoint text-amber"></i></div>
+                                <div class="doc-badge-group">
+                                    <span class="doc-type-tag type-group">Group</span>
+                                    <span class="doc-meta-badge">PPTX • 15.2 MB</span>
+                                </div>
+                            </div>
+                            <h4>Progress Presentation</h4>
+                            <div class="doc-author-info">
+                                <i class="fa-solid fa-user"></i> <span>Group R26-IT-008</span>
+                            </div>
+                        </div>
+                        <div class="doc-actions mt-3">
+                            <button class="btn btn-outline btn-sm w-100"><i class="fa-solid fa-eye"></i> View</button>
+                            <button class="btn btn-primary btn-sm"><i class="fa-solid fa-download"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="glass-card doc-box" data-category="group" data-title="Progress Presentation 01" data-author="Group R26-IT-008">
+                        <div>
+                            <div class="doc-header-row">
+                                <div class="doc-icon"><i class="fa-solid fa-file-powerpoint text-amber"></i></div>
+                                <div class="doc-badge-group">
+                                    <span class="doc-type-tag type-group">Group</span>
+                                    <span class="doc-meta-badge">PPTX • 12.4 MB</span>
+                                </div>
+                            </div>
+                            <h4>Progress Presentation 01</h4>
+                            <div class="doc-author-info">
+                                <i class="fa-solid fa-user"></i> <span>Group R26-IT-008</span>
+                            </div>
+                        </div>
+                        <div class="doc-actions mt-3">
+                            <button class="btn btn-outline btn-sm w-100"><i class="fa-solid fa-eye"></i> View</button>
+                            <button class="btn btn-primary btn-sm"><i class="fa-solid fa-download"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="glass-card doc-box" data-category="group" data-title="Progress Presentation 02" data-author="Group R26-IT-008">
+                        <div>
+                            <div class="doc-header-row">
+                                <div class="doc-icon"><i class="fa-solid fa-file-powerpoint text-amber"></i></div>
+                                <div class="doc-badge-group">
+                                    <span class="doc-type-tag type-group">Group</span>
+                                    <span class="doc-meta-badge">PPTX • 18.1 MB</span>
+                                </div>
+                            </div>
+                            <h4>Progress Presentation 02</h4>
+                            <div class="doc-author-info">
+                                <i class="fa-solid fa-user"></i> <span>Group R26-IT-008</span>
+                            </div>
+                        </div>
+                        <div class="doc-actions mt-3">
+                            <button class="btn btn-outline btn-sm w-100"><i class="fa-solid fa-eye"></i> View</button>
+                            <button class="btn btn-primary btn-sm"><i class="fa-solid fa-download"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="glass-card doc-box" data-category="group" data-title="Research Paper" data-author="Group R26-IT-008">
+                        <div>
+                            <div class="doc-header-row">
+                                <div class="doc-icon"><i class="fa-solid fa-file-pdf text-rose"></i></div>
+                                <div class="doc-badge-group">
+                                    <span class="doc-type-tag type-group">Group</span>
+                                    <span class="doc-meta-badge">PDF • 2.5 MB</span>
+                                </div>
+                            </div>
+                            <h4>Research Paper</h4>
+                            <div class="doc-author-info">
+                                <i class="fa-solid fa-user"></i> <span>Group R26-IT-008</span>
+                            </div>
+                        </div>
+                        <div class="doc-actions mt-3">
+                            <button class="btn btn-outline btn-sm w-100"><i class="fa-solid fa-eye"></i> View</button>
+                            <button class="btn btn-primary btn-sm"><i class="fa-solid fa-download"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="glass-card doc-box" data-category="group" data-title="Poster" data-author="Group R26-IT-008">
+                        <div>
+                            <div class="doc-header-row">
+                                <div class="doc-icon"><i class="fa-solid fa-file-image text-emerald"></i></div>
+                                <div class="doc-badge-group">
+                                    <span class="doc-type-tag type-group">Group</span>
+                                    <span class="doc-meta-badge">PNG • 10.5 MB</span>
+                                </div>
+                            </div>
+                            <h4>Poster</h4>
+                            <div class="doc-author-info">
+                                <i class="fa-solid fa-user"></i> <span>Group R26-IT-008</span>
+                            </div>
+                        </div>
+                        <div class="doc-actions mt-3">
+                            <button class="btn btn-outline btn-sm w-100"><i class="fa-solid fa-eye"></i> View</button>
+                            <button class="btn btn-primary btn-sm"><i class="fa-solid fa-download"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="glass-card doc-box" data-category="group" data-title="Progress Reports" data-author="Group R26-IT-008">
+                        <div>
+                            <div class="doc-header-row">
+                                <div class="doc-icon"><i class="fa-solid fa-file-pdf text-rose"></i></div>
+                                <div class="doc-badge-group">
+                                    <span class="doc-type-tag type-group">Group</span>
+                                    <span class="doc-meta-badge">PDF • 5.5 MB</span>
+                                </div>
+                            </div>
+                            <h4>Progress Reports</h4>
+                            <div class="doc-author-info">
+                                <i class="fa-solid fa-user"></i> <span>Group R26-IT-008</span>
+                            </div>
+                        </div>
+                        <div class="doc-actions mt-3">
+                            <button class="btn btn-outline btn-sm w-100"><i class="fa-solid fa-eye"></i> View</button>
+                            <button class="btn btn-primary btn-sm"><i class="fa-solid fa-download"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="glass-card doc-box" data-category="group" data-title="Final Report" data-author="Group R26-IT-008">
+                        <div>
+                            <div class="doc-header-row">
+                                <div class="doc-icon"><i class="fa-solid fa-file-pdf text-rose"></i></div>
+                                <div class="doc-badge-group">
+                                    <span class="doc-type-tag type-group">Group</span>
+                                    <span class="doc-meta-badge">PDF • 14.8 MB</span>
+                                </div>
+                            </div>
+                            <h4>Final Report</h4>
+                            <div class="doc-author-info">
+                                <i class="fa-solid fa-user"></i> <span>Group R26-IT-008</span>
+                            </div>
+                        </div>
+                        <div class="doc-actions mt-3">
+                            <button class="btn btn-outline btn-sm w-100"><i class="fa-solid fa-eye"></i> View</button>
+                            <button class="btn btn-primary btn-sm"><i class="fa-solid fa-download"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="glass-card doc-box" data-category="logbook" data-title="Log Book Member 01" data-author="Tharindi W.A.K">
+                        <div>
+                            <div class="doc-header-row">
+                                <div class="doc-icon"><i class="fa-solid fa-book text-purple"></i></div>
+                                <div class="doc-badge-group">
+                                    <span class="doc-type-tag type-logbook">Logbook</span>
+                                    <span class="doc-meta-badge">PDF • 2.1 MB</span>
+                                </div>
+                            </div>
+                            <h4>Log Book Member 01</h4>
+                            <div class="doc-author-info">
+                                <i class="fa-solid fa-user"></i> <span>Tharindi W.A.K</span>
+                            </div>
+                        </div>
+                        <div class="doc-actions mt-3">
+                            <button class="btn btn-outline btn-sm w-100"><i class="fa-solid fa-eye"></i> View</button>
+                            <button class="btn btn-primary btn-sm"><i class="fa-solid fa-download"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="glass-card doc-box" data-category="logbook" data-title="Log Book Member 02" data-author="Perera M D S">
+                        <div>
+                            <div class="doc-header-row">
+                                <div class="doc-icon"><i class="fa-solid fa-book text-purple"></i></div>
+                                <div class="doc-badge-group">
+                                    <span class="doc-type-tag type-logbook">Logbook</span>
+                                    <span class="doc-meta-badge">PDF • 2.1 MB</span>
+                                </div>
+                            </div>
+                            <h4>Log Book Member 02</h4>
+                            <div class="doc-author-info">
+                                <i class="fa-solid fa-user"></i> <span>Perera M D S</span>
+                            </div>
+                        </div>
+                        <div class="doc-actions mt-3">
+                            <button class="btn btn-outline btn-sm w-100"><i class="fa-solid fa-eye"></i> View</button>
+                            <button class="btn btn-primary btn-sm"><i class="fa-solid fa-download"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="glass-card doc-box" data-category="logbook" data-title="Log Book Member 03" data-author="Praveen H.G">
+                        <div>
+                            <div class="doc-header-row">
+                                <div class="doc-icon"><i class="fa-solid fa-book text-purple"></i></div>
+                                <div class="doc-badge-group">
+                                    <span class="doc-type-tag type-logbook">Logbook</span>
+                                    <span class="doc-meta-badge">PDF • 2.1 MB</span>
+                                </div>
+                            </div>
+                            <h4>Log Book Member 03</h4>
+                            <div class="doc-author-info">
+                                <i class="fa-solid fa-user"></i> <span>Praveen H.G</span>
+                            </div>
+                        </div>
+                        <div class="doc-actions mt-3">
+                            <button class="btn btn-outline btn-sm w-100"><i class="fa-solid fa-eye"></i> View</button>
+                            <button class="btn btn-primary btn-sm"><i class="fa-solid fa-download"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="glass-card doc-box" data-category="logbook" data-title="Log Book Member 04" data-author="Manohara H.U.K.R.T">
+                        <div>
+                            <div class="doc-header-row">
+                                <div class="doc-icon"><i class="fa-solid fa-book text-purple"></i></div>
+                                <div class="doc-badge-group">
+                                    <span class="doc-type-tag type-logbook">Logbook</span>
+                                    <span class="doc-meta-badge">PDF • 2.1 MB</span>
+                                </div>
+                            </div>
+                            <h4>Log Book Member 04</h4>
+                            <div class="doc-author-info">
+                                <i class="fa-solid fa-user"></i> <span>Manohara H.U.K.R.T</span>
+                            </div>
+                        </div>
+                        <div class="doc-actions mt-3">
+                            <button class="btn btn-outline btn-sm w-100"><i class="fa-solid fa-eye"></i> View</button>
+                            <button class="btn btn-primary btn-sm"><i class="fa-solid fa-download"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- TEAM & ACADEMIC SUPERVISION -->
+        <section class="section team-section" id="team">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag"><i class="fa-solid fa-users"></i> Research Team</span>
+                    <h2 class="section-title">Student Researchers & Supervisors</h2>
+                    <p class="section-subtitle">Department of Information Technology • Sri Lanka Institute of Information Technology (SLIIT)</p>
+                </div>
+
+                <!-- 4 Student Researchers Grid -->
+                <div class="grid grid-4 team-grid">
+                    
+                    <!-- Member 1 -->
+                    <div class="glass-card team-card">
+                        <div class="avatar-box avatar-c1">
+                            <img src="images/member1.png" alt="Tharindi W.A.K">
+                        </div>
+                        <h3>Tharindi W.A.K</h3>
+                        <div class="student-id">ID: <code>IT22116260</code></div>
+                        <div class="module-tag tag-rose">Multimodal Text Toxicity</div>
+                        <p class="card-desc">BiLSTM Singlish slur normalization, ASR speech & video frame OCR transcription.</p>
+                    </div>
+
+                    <!-- Member 2 -->
+                    <div class="glass-card team-card">
+                        <div class="avatar-box avatar-c2">
+                            <img src="images/member2.jpeg" alt="Perera M D S">
+                        </div>
+                        <h3>Perera M D S</h3>
+                        <div class="student-id">ID: <code>IT22245892</code></div>
+                        <div class="module-tag tag-cyan">Toxicity Image Detection</div>
+                        <p class="card-desc">Pre-upload toxic image blocking using MobileNetV2 features & H5 fallback redundancy.</p>
+                    </div>
+
+                    <!-- Member 3 -->
+                    <div class="glass-card team-card">
+                        <div class="avatar-box avatar-c3">
+                            <img src="images/member4.jpeg" alt="Praveen H.G">
+                        </div>
+                        <h3>Praveen H.G</h3>
+                        <div class="student-id">ID: <code>IT22252968</code></div>
+                        <div class="module-tag tag-purple">Adaptive Emotional Shielding</div>
+                        <p class="card-desc">AESM BiLSTM-attention classifier, 5 shielding actions & victim distress escalation.</p>
+                    </div>
+
+                    <!-- Member 4 -->
+                    <div class="glass-card team-card">
+                        <div class="avatar-box avatar-c4">
+                            <img src="images/member3.png" alt="Manohara H.U.K.R.T">
+                        </div>
+                        <h3>Manohara H.U.K.R.T</h3>
+                        <div class="student-id">ID: <code>IT22169594</code></div>
+                        <div class="module-tag tag-emerald">Toxic Behavior & XAI</div>
+                        <p class="card-desc">Random Forest risk modeling, SHAP explanations, SNA metrics & graduated sanctions.</p>
+                    </div>
+
+                </div>
+
+                <!-- Academic Supervisors -->
+                <div class="glass-card supervisors-card mt-5 p-4 text-center">
+                    <h3><i class="fa-solid fa-award text-gradient"></i> Academic Supervision</h3>
+                    <div class="supervisors-grid mt-4">
+                        <div class="sup-box">
+                            <div class="sup-role">Supervisor</div>
+                            <h4>Ms. Manori Gamage</h4>
+                            <small>Department of Information Technology, SLIIT</small>
+                        </div>
+                        <div class="sup-box">
+                            <div class="sup-role">Co-supervisor</div>
+                            <h4>Mr. Nelum Amarasena</h4>
+                            <small>Centre of Excellence for AI (CoEAI), SLIIT</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="brand-logo">
+                        <div class="logo-shield"><i class="fa-solid fa-shield-halved"></i></div>
+                        <span class="brand-name">PURE<span class="brand-highlight">TALK</span></span>
+                    </div>
+                    <p class="mt-2 text-sub">Project ID: R26-IT-008 • SLIIT Research Project IT4010</p>
+                    <p class="text-sub">Centre of Excellence for Artificial Intelligence (CoEAI)</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Navigation</h4>
+                    <ul>
+                        <li><a href="#hero">Hero Overview</a></li>
+                        <li><a href="#about-us">About Us</a></li>
+                        <li><a href="#architecture">Architecture</a></li>
+                        <li><a href="#modules">Core Modules</a></li>
+                        <li><a href="#demo">Live Sandbox</a></li>
+                        <li><a href="#timeline">Project Timeline</a></li>
+                        <li><a href="#documents">Deliverables</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Research Modules</h4>
+                    <ul>
+                        <li><a href="#modules">Singlish BiLSTM NLP</a></li>
+                        <li><a href="#modules">MobileNetV2 Image Scan</a></li>
+                        <li><a href="#modules">AESM Emotional Shield</a></li>
+                        <li><a href="#modules">SHAP & XAI Enforcement</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-institutional">
+                    <h4>Institution</h4>
+                    <p>Sri Lanka Institute of Information Technology (SLIIT)</p>
+                    <p>Faculty of Computing | Dept. of Information Technology</p>
+                    <small class="text-sub">October 2026</small>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 PureTalk Research Team (R26-IT-008). All Rights Reserved.</p>
+                <a href="#hero" class="back-to-top" id="btnBackToTop"><i class="fa-solid fa-arrow-up"></i> Top</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- DOCUMENT PREVIEW MODAL -->
+    <div class="modal-overlay" id="docModal">
+        <div class="modal-card">
+            <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Preview">&times;</button>
+            <div class="modal-body" id="modalBody">
+                <div class="d-flex align-center gap-3">
+                    <i class="fa-solid fa-file-pdf text-rose" style="font-size: 2.5rem;"></i>
+                    <div>
+                        <h3 id="modalTitle">Document Title Preview</h3>
+                        <small id="modalMeta" class="text-sub">Format: PDF • Size: 14.2 MB</small>
+                    </div>
+                </div>
+                <hr class="divider">
+                <div class="modal-doc-viewer p-4 bg-dark-subtle radius-md border-glass">
+                    <h4>Executive Summary & Content Outline</h4>
+                    <p id="modalDesc" class="mt-2 text-muted">Document overview description will appear here...</p>
+                    <div class="pdf-simulated-page mt-4 p-4 bg-dark radius-md border-glass text-center">
+                        <i class="fa-solid fa-file-invoice text-cyan" style="font-size: 3.5rem;"></i>
+                        <p class="mt-2">Simulated Document Reader View</p>
+                        <small class="text-sub">SLIIT Research Repository • Project ID: R26-IT-008</small>
+                    </div>
+                </div>
+                <div class="d-flex justify-between align-center mt-4">
+                    <small class="text-sub">Certified by SLIIT Department of Information Technology</small>
+                    <a href="#" class="btn btn-glow btn-sm"><i class="fa-solid fa-download"></i> Download Full File</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Script File -->
+    <script src="script.js"></script>
+</body>
+</html>
