@@ -561,4 +561,263 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /* ----------------------------------------------------------------------
+     * 5. RESEARCHER / SUPERVISOR PROFILE POPUP MODAL
+     * ---------------------------------------------------------------------- */
+    const researcherProfiles = {
+        tharindi: {
+            name: "Tharindi W.A.K",
+            role: "Multimodal Text Toxicity Researcher",
+            id: "IT22116260",
+            avatar: "images/member1.png",
+            position: "Student Researcher — Component 1 Lead",
+            component: "Multimodal Text Toxicity Detection (BiLSTM + Singlish NLP + ASR)",
+            about: "Specializes in code-mixed Singlish/English text classification, Romanized Sinhala slur normalization, and speech-emotion fusion. Built the multi-label BiLSTM classifier that forms the foundation of PureTalk's text toxicity pipeline, extending it with wav2vec2 ASR transcription and video frame OCR extraction.",
+            skills: ["Python", "BiLSTM", "TensorFlow", "Keras", "wav2vec2", "Whisper ASR", "NLTK", "spaCy", "OpenCV OCR", "Pandas"],
+            contributions: [
+                "Built Singlish slur-normalization lexicon with 3,500+ code-mixed tokens.",
+                "Trained BiLSTM multi-label classifier achieving 94.6% accuracy on 6-category toxicity scoring.",
+                "Integrated wav2vec2 speech ASR with video frame OCR for multimodal text extraction.",
+                "Designed bounded-evidence fusion logic combining text + speech emotional signals."
+            ],
+            social: [
+                { label: "LinkedIn", icon: "fa-brands fa-linkedin", url: "https://www.linkedin.com/in/kaveesha-tharindi-a9a75b339/", cls: "linkedin" },
+                { label: "GitHub", icon: "fa-brands fa-github", url: "https://github.com/Kaveesha-Tharindi", cls: "github" }
+            ]
+        },
+        perera: {
+            name: "Perera M D S",
+            role: "Image Detection Researcher",
+            id: "IT22245892",
+            avatar: "images/member2.jpeg",
+            position: "Student Researcher — Component 2 Lead",
+            component: "Toxicity Image Detection & Visual Content Analysis (MobileNetV2)",
+            about: "Focused on pre-upload toxic image blocking using deep CNN transfer learning. Designed the MobileNetV2-based toxicity classifier that intercepts cyberbullying memes and hate speech screenshots before they ever reach the platform, with an H5 fallback redundancy pipeline for high-availability scanning.",
+            skills: ["Python", "OpenCV", "TensorFlow", "CNN", "PyTorch", "MobileNetV2", "NumPy", "Pillow", "Keras", "Matplotlib"],
+            contributions: [
+                "Designed MobileNetV2 pre-upload image toxicity classifier with 92.0% accuracy.",
+                "Built H5 fallback redundancy pipeline for high-availability pre-upload scans.",
+                "Integrated OpenCV preprocessing for meme text extraction and hate-symbol detection.",
+                "Optimized 224x224 RGB normalization pipeline with 0.5 decision threshold tuning."
+            ],
+            social: [
+                { label: "LinkedIn", icon: "fa-brands fa-linkedin", url: "https://www.linkedin.com/in/senura-perera-21b26b33a/", cls: "linkedin" },
+                { label: "GitHub", icon: "fa-brands fa-github", url: "https://github.com/senu02", cls: "github" }
+            ]
+        },
+        praveen: {
+            name: "Praveen H.G",
+            role: "Adaptive Shielding Researcher",
+            id: "IT22252968",
+            avatar: "images/member4.jpeg",
+            position: "Student Researcher — Component 3 Lead",
+            component: "Adaptive Emotional Shielding Module (AESM) — BiLSTM-Attention",
+            about: "Specializes in adaptive UI emotional shielding and personalized protective action selection. Designed the BiLSTM-Attention classifier that selects one of 5 protective UI actions (Allow, Warn, Blur, Hide, Rewrite) based on user sensitivity profiles and victim distress state.",
+            skills: ["Python", "BiLSTM-Attention", "TensorFlow", "Keras", "scikit-learn", "UI/UX Logic", "Pandas", "Matplotlib", "Jupyter"],
+            contributions: [
+                "Designed AESM BiLSTM-Attention classifier with 96.8% protective-action accuracy.",
+                "Implemented 5-level shielding action logic (Allow, Warn, Blur, Hide, Rewrite).",
+                "Built victim distress escalation flow routing severe cases to human support teams.",
+                "Integrated user sensitivity profiles (Standard, Sensitive, Victim) into shielding pipeline."
+            ],
+            social: [
+                { label: "LinkedIn", icon: "fa-brands fa-linkedin", url: "https://www.linkedin.com/in/praveen-pramodh-1a7021289/", cls: "linkedin" },
+                { label: "GitHub", icon: "fa-brands fa-github", url: "https://github.com/praveenpramodh2002", cls: "github" }
+            ]
+        },
+        manohara: {
+            name: "Manohara H.U.K.R.T",
+            role: "Toxic Behavior & XAI Researcher",
+            id: "IT22169594",
+            avatar: "images/member3.png",
+            position: "Student Researcher — Component 4 Lead",
+            component: "Profile-Based Toxic Behavior Enforcement & SHAP Explainability",
+            about: "Specializes in behavioral risk modeling and explainable AI enforcement. Designed the Random Forest risk profiling model (99.2% accuracy) that computes persistent user toxicity risk, with SHAP feature attributions and Social Network Analysis (SNA) metrics powering graduated sanction decisions.",
+            skills: ["Python", "Random Forest", "SHAP", "LIME", "scikit-learn", "NetworkX", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
+            contributions: [
+                "Built Random Forest behavioral risk classifier with 99.2% accuracy.",
+                "Implemented SHAP force-plot feature attributions for explainable enforcement.",
+                "Integrated Social Network Analysis (SNA) centrality metrics into risk scoring.",
+                "Designed 4-tier graduated sanction hierarchy (Warning → Mute → Ban)."
+            ],
+            social: [
+                { label: "LinkedIn", icon: "fa-brands fa-linkedin", url: "https://www.linkedin.com/in/ravindu-thilinaka/", cls: "linkedin" },
+                { label: "GitHub", icon: "fa-brands fa-github", url: "https://github.com/RavinduThilinaka", cls: "github" }
+            ]
+        },
+        manori: {
+            name: "Ms. Manori Gamage",
+            role: "Academic Supervisor",
+            id: "SLIIT Faculty",
+            avatar: "images/supervisor-manori.png",
+            position: "Supervisor — Department of Information Technology, SLIIT",
+            component: "Overall Project Supervision & Research Guidance",
+            about: "Provides academic supervision for the PureTalk research project (R26-IT-008). Guides the team through research methodology, model evaluation, thesis structuring, and SLIIT IT4010 assessment criteria. Ensures alignment with faculty standards and ethical AI research practices.",
+            skills: ["Research Methodology", "AI Ethics", "Machine Learning", "NLP", "Academic Supervision", "Thesis Review"],
+            contributions: [
+                "Guided research problem formulation and scope definition across 4 components.",
+                "Reviewed BiLSTM, MobileNetV2, and Random Forest model architectures.",
+                "Provided weekly feedback on thesis drafts and Common Report structure.",
+                "Ensured ethical AI compliance and SLIIT academic standards."
+            ],
+            social: []
+        },
+        nelum: {
+            name: "Mr. Nelum Amarasena",
+            role: "Academic Co-Supervisor",
+            id: "SLIIT CoEAI",
+            avatar: "",
+            position: "Co-Supervisor — Centre of Excellence for AI (CoEAI), SLIIT",
+            component: "AI Technical Co-Supervision & XAI Guidance",
+            about: "Provides technical co-supervision with a focus on AI model architecture, explainable AI (XAI) integration, and production-grade deployment concerns. Guides the team on SHAP/LIME explainability, model evaluation metrics, and integration with the Django REST Framework backend.",
+            skills: ["Deep Learning", "Explainable AI (XAI)", "SHAP", "LIME", "Model Deployment", "Django REST", "Research Writing"],
+            contributions: [
+                "Guided SHAP/LIME explainability integration across all 4 components.",
+                "Advised on Django REST Framework API design and token security.",
+                "Reviewed model evaluation methodology and performance benchmarks.",
+                "Provided technical feedback during PR1 and PR2 defense sessions."
+            ],
+            social: []
+        }
+    };
+
+    const profileModal = document.getElementById('profileModal');
+    const profileModalClose = document.getElementById('profileModalClose');
+    const teamCards = document.querySelectorAll('.team-card');
+    const supBoxes = document.querySelectorAll('.sup-box');
+
+    function openResearcherProfile(memberKey) {
+        const data = researcherProfiles[memberKey];
+        if (!data || !profileModal) return;
+
+        // Avatar
+        const avatarWrap = document.getElementById('pmAvatarWrap');
+        if (avatarWrap) {
+            if (data.avatar) {
+                avatarWrap.innerHTML = `<img src="${data.avatar}" alt="${data.name}" id="pmAvatarImg">`;
+            } else {
+                avatarWrap.innerHTML = `<i class="fa-solid fa-user-tie avatar-fallback"></i>`;
+            }
+        }
+
+        // Header info
+        document.getElementById('pmName').textContent = data.name;
+        document.getElementById('pmRole').textContent = data.role;
+        document.getElementById('pmId').textContent = data.id;
+
+        // Right panel
+        document.getElementById('pmPosition').textContent = data.position;
+        document.getElementById('pmComponent').textContent = data.component;
+        document.getElementById('pmAbout').textContent = data.about;
+
+        // Skills
+        const skillsContainer = document.getElementById('pmSkills');
+        skillsContainer.innerHTML = '';
+        data.skills.forEach(skill => {
+            const span = document.createElement('span');
+            span.className = 'profile-skill-pill';
+            span.textContent = skill;
+            skillsContainer.appendChild(span);
+        });
+
+        // Contributions
+        const contribContainer = document.getElementById('pmContributions');
+        contribContainer.innerHTML = '';
+        data.contributions.forEach(c => {
+            const li = document.createElement('li');
+            li.textContent = c;
+            contribContainer.appendChild(li);
+        });
+
+        // Social links
+        const socialContainer = document.getElementById('pmSocial');
+        socialContainer.innerHTML = '';
+        if (data.social && data.social.length > 0) {
+            data.social.forEach(s => {
+                const a = document.createElement('a');
+                a.href = s.url;
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+                a.className = s.cls;
+                a.innerHTML = `<i class="${s.icon}"></i> ${s.label}`;
+                socialContainer.appendChild(a);
+            });
+        } else {
+            socialContainer.innerHTML = `<small class="text-sub" style="font-size:0.75rem;">SLIIT Faculty Member</small>`;
+        }
+
+        profileModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeResearcherProfile() {
+        if (profileModal) {
+            profileModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+
+    // Attach click handlers to team cards
+    teamCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const member = card.getAttribute('data-member');
+            if (member) openResearcherProfile(member);
+        });
+    });
+
+    // Attach click handlers to supervisor boxes
+    supBoxes.forEach(box => {
+        box.addEventListener('click', () => {
+            const member = box.getAttribute('data-member');
+            if (member) openResearcherProfile(member);
+        });
+    });
+
+    // Close handlers
+    if (profileModalClose) {
+        profileModalClose.addEventListener('click', closeResearcherProfile);
+    }
+
+    if (profileModal) {
+        profileModal.addEventListener('click', (e) => {
+            if (e.target === profileModal) {
+                closeResearcherProfile();
+            }
+        });
+    }
+
+    // ESC key to close
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && profileModal && profileModal.classList.contains('active')) {
+            closeResearcherProfile();
+        }
+    });
+
+    /* ----------------------------------------------------------------------
+     * 6. PROJECT TIMELINE SCROLL POPUP ANIMATION
+     * Auto-reveal milestones from top as user scrolls down
+     * ---------------------------------------------------------------------- */
+    const timelineItems = document.querySelectorAll('.timeline-item');
+
+    if (timelineItems.length > 0) {
+        const timelineObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    // Staggered reveal with slight delay per item
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+
+                    // Stop observing after reveal (one-time animation)
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -80px 0px'
+        });
+
+        timelineItems.forEach(item => timelineObserver.observe(item));
+    }
+
 });
