@@ -422,6 +422,21 @@ p {
     align-items: center;
 }
 
+.hero-visual {
+    min-width: 0;
+}
+
+.hero-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45), 0 0 40px rgba(6, 182, 212, 0.12);
+}
+
 .badge-group {
     display: flex;
     flex-wrap: wrap;
@@ -1884,6 +1899,24 @@ p {
     line-height: 1.5;
 }
 
+.team-social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.team-social-links a {
+    color: var(--text-sub);
+    font-size: 0.82rem;
+    transition: var(--transition);
+}
+
+.team-social-links a:hover,
+.team-social-links a:focus-visible {
+    color: var(--accent-cyan);
+}
+
 .supervisors-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1899,41 +1932,109 @@ p {
     text-transform: uppercase;
 }
 
+.supervisor-photo {
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 0.75rem;
+    border: 3px solid var(--border-glass);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
 /* ==========================================================================
    FOOTER
    ========================================================================== */
 .footer {
-    background: #060911;
-    border-top: 1px solid var(--border-glass);
-    padding: 4rem 0 2rem 0;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 12% 0%, rgba(6, 182, 212, 0.1), transparent 38%),
+        linear-gradient(180deg, #090e19 0%, #060911 100%);
+    border-top: 1px solid rgba(6, 182, 212, 0.24);
+    padding: 4.5rem 0 1.5rem;
     font-size: 0.88rem;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    gap: 3rem;
-    margin-bottom: 3rem;
+    grid-template-columns: 1.45fr repeat(3, 1fr);
+    gap: clamp(1.5rem, 3vw, 3rem);
+    margin-bottom: 3.5rem;
+}
+
+.footer-brand .brand-logo {
+    margin-bottom: 1.25rem;
+}
+
+.footer-brand p,
+.footer-institutional p {
+    max-width: 27rem;
+    color: var(--text-sub);
+    line-height: 1.75;
+}
+
+.footer-brand p + p,
+.footer-institutional p + p {
+    margin-top: 0.5rem;
 }
 
 .footer-links h4, .footer-institutional h4 {
     font-size: 1rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.1rem;
     color: #fff;
+    letter-spacing: 0.01em;
 }
 
-.footer-links ul { list-style: none; }
-.footer-links li { margin-bottom: 0.65rem; }
-.footer-links a { color: var(--text-muted); text-decoration: none; transition: var(--transition); }
-.footer-links a:hover { color: var(--accent-cyan); }
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.7rem;
+}
+
+.footer-links a,
+.footer-institutional a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible,
+.footer-institutional a:hover,
+.footer-institutional a:focus-visible {
+    color: var(--accent-cyan);
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+    padding-left: 0.2rem;
+}
+
+.footer-institutional small {
+    display: inline-block;
+    margin-top: 0.25rem;
+}
+
+.footer-institutional p:last-child {
+    margin-top: 1rem;
+}
 
 .footer-bottom {
-    padding-top: 2rem;
+    padding-top: 1.5rem;
     border-top: 1px solid var(--border-glass);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
     color: var(--text-sub);
+}
+
+.footer-bottom p {
+    margin: 0;
 }
 
 .back-to-top {
@@ -1942,8 +2043,13 @@ p {
     display: flex;
     align-items: center;
     gap: 0.4rem;
+    transition: var(--transition);
 }
-.back-to-top:hover { color: #fff; }
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+    color: var(--accent-cyan);
+}
 
 /* ==========================================================================
    RESPONSIVE MEDIA QUERIES
@@ -1956,7 +2062,7 @@ p {
     .grid-4 { grid-template-columns: repeat(2, 1fr); }
     .grid-3 { grid-template-columns: repeat(2, 1fr); }
     .modules-tabs { grid-template-columns: repeat(2, 1fr); }
-    .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 768px) {
@@ -1980,5 +2086,7 @@ p {
     .modules-tabs { grid-template-columns: 1fr; }
     .supervisors-grid { grid-template-columns: 1fr; }
     .hero-stats { grid-template-columns: repeat(2, 1fr); }
-    .footer-grid { grid-template-columns: 1fr; }
+    .footer { padding-top: 3.25rem; }
+    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-bottom { align-items: flex-start; flex-direction: column; }
 }
