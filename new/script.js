@@ -124,6 +124,94 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ----------------------------------------------------------------------
+     * 2B. DOMAIN SECTION TAB SWITCHING + NAVBAR DROPDOWN
+     * ---------------------------------------------------------------------- */
+    const domainTabBtns = document.querySelectorAll('.domain-tab-btn');
+    const domainPanels  = document.querySelectorAll('.domain-panel');
+
+    // Core helper: activate a specific domain tab by key
+    function activateDomainTab(tabKey) {
+        domainTabBtns.forEach(b => b.classList.remove('active'));
+        domainPanels.forEach(p => p.classList.remove('active'));
+
+        const matchBtn = document.querySelector(`.domain-tab-btn[data-domain="${tabKey}"]`);
+        const matchPanel = document.getElementById(`domain-${tabKey}`);
+        if (matchBtn) matchBtn.classList.add('active');
+        if (matchPanel) matchPanel.classList.add('active');
+    }
+
+    // In-section tab buttons
+    domainTabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            activateDomainTab(btn.getAttribute('data-domain'));
+        });
+    });
+
+    // Navbar dropdown items → scroll to domain + activate tab
+    const navDropdownItems = document.querySelectorAll('.nav-dropdown-item[data-tab-target]');
+    navDropdownItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const tabKey = item.getAttribute('data-tab-target');
+            activateDomainTab(tabKey);
+
+            // Scroll to domain section smoothly
+            const domainSection = document.getElementById('domain');
+            if (domainSection) {
+                setTimeout(() => {
+                    domainSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 60);
+            }
+
+            // Close dropdown
+            const dropdown = document.getElementById('navDomainDropdown');
+            if (dropdown) dropdown.classList.remove('open');
+            if (navMenu) navMenu.classList.remove('active');
+        });
+    });
+
+    // Navbar Domain trigger: mobile toggle / desktop is pure CSS hover
+    const navDomainDropdown = document.getElementById('navDomainDropdown');
+    const domainNavTrigger   = document.getElementById('domainNavTrigger');
+
+    if (domainNavTrigger && navDomainDropdown) {
+        domainNavTrigger.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                navDomainDropdown.classList.toggle('open');
+            }
+        });
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        if (navDomainDropdown && !navDomainDropdown.contains(e.target)) {
+            navDomainDropdown.classList.remove('open');
+        }
+    });
+
+    // Literature Survey Filter Bar
+    const litFilterBtns = document.querySelectorAll('.lit-filter-btn');
+    const litPaperCards = document.querySelectorAll('#litPaperGrid .lit-paper-card');
+
+    litFilterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.getAttribute('data-lit-filter');
+            litFilterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            litPaperCards.forEach(card => {
+                const category = card.getAttribute('data-lit-category');
+                if (filter === 'all' || category === filter) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    /* ----------------------------------------------------------------------
      * 3. LIVE AI DEMO SANDBOX CONTROLLER
      * ---------------------------------------------------------------------- */
     // Demo Mode Switching (Text / Image / Audio / Profile)
@@ -1117,6 +1205,53 @@ document.addEventListener('DOMContentLoaded', () => {
         resizeCanvas();
         animateWeb();
         spiderCanvas.classList.add('pulse');
+    }
+
+    /* ----------------------------------------------------------------------
+     * CONTACT FORM HANDLER
+     * ---------------------------------------------------------------------- */
+    const contactForm = document.getElementById('contactForm');
+    const contactFormMsg = document.getElementById('contactFormMsg');
+    const btnSendContact = document.getElementById('btnSendContact');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name    = document.getElementById('contactName')?.value.trim();
+            const email   = document.getElementById('contactEmail')?.value.trim();
+            const subject = document.getElementById('contactSubject')?.value;
+            const message = document.getElementById('contactMessage')?.value.trim();
+
+            if (!name || !email || !subject || !message) {
+                contactFormMsg.textContent = '⚠ Please fill in all required fields before sending.';
+                contactFormMsg.className = 'contact-form-feedback feedback-error';
+                contactFormMsg.style.display = 'block';
+                return;
+            }
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                contactFormMsg.textContent = '⚠ Please enter a valid email address.';
+                contactFormMsg.className = 'contact-form-feedback feedback-error';
+                contactFormMsg.style.display = 'block';
+                return;
+            }
+
+            btnSendContact.disabled = true;
+            btnSendContact.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+
+            setTimeout(() => {
+                btnSendContact.disabled = false;
+                btnSendContact.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+                contactForm.reset();
+                contactFormMsg.textContent = '✓ Message sent successfully! We will respond within 2 working days.';
+                contactFormMsg.className = 'contact-form-feedback feedback-success';
+                contactFormMsg.style.display = 'block';
+
+                setTimeout(() => { contactFormMsg.style.display = 'none'; }, 6000);
+            }, 1800);
+        });
     }
 
 });
