@@ -1806,6 +1806,16 @@ p {
     gap: 0.6rem;
 }
 
+/* ✅ FIX: Ensure <a> tags inside doc-actions render exactly like buttons */
+.doc-actions a.btn {
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.doc-actions a.btn.w-100 {
+    flex: 1;
+}
+
 /* DOCUMENT PREVIEW MODAL */
 .modal-overlay {
     position: fixed;
