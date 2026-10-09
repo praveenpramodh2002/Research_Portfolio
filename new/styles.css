@@ -3730,4 +3730,59 @@ select.form-control option { background: #0d1a2d; color: #fff; }
 }
 .feedback-success { background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald); border: 1px solid var(--accent-emerald); }
 .feedback-error   { background: rgba(244,  63,  94, 0.15); color: var(--accent-rose);    border: 1px solid var(--accent-rose);    }
-
+
+/* ==========================================================================
+   ✅ FIX: Contact Info Column — prevent overlap between stacked cards
+   ========================================================================== */
+.contact-info-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;           /* Ensures consistent spacing between stacked cards */
+}
+
+.contact-info-card,
+.contact-team-card {
+    position: relative;    /* Establish stacking context */
+    z-index: 1;            /* Keep both cards in the same layer */
+    overflow: hidden;      /* Prevent any child from visually bleeding out */
+    margin-bottom: 0;      /* Remove any inherited bottom margin (gap handles it) */
+}
+
+/* Ensure team contact card never overlaps the info card above it */
+.contact-team-card.mt-4 {
+    margin-top: 0 !important;   /* Override the inline utility mt-4 in this specific context */
+}
+
+/* Slightly increase internal padding on the team contact card for breathing room */
+.contact-team-card {
+    padding: 2rem;
+}
+
+/* Ensure the team contact list fills the card gracefully */
+.team-contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+/* On mobile, keep the same comfortable spacing */
+@media (max-width: 768px) {
+    .contact-info-col {
+        gap: 1.25rem;
+    }
+}
+
+/* Fix: Team section — prevent student grid and supervisor card from overlapping */
+.team-grid {
+    margin-bottom: 2.5rem;
+}
+
+.supervisors-card {
+    margin-top: 0 !important;
+}
+
+.team-section .supervisors-card {
+    clear: both;
+    position: relative;
+    z-index: 1;
+}
