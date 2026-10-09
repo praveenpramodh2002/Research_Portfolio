@@ -3704,21 +3704,59 @@ p {
 .tc-purple { background: var(--accent-purple);  box-shadow: 0 0 12px rgba(139,  92, 246, 0.4); }
 .tc-emerald{ background: var(--accent-emerald); box-shadow: 0 0 12px rgba( 16, 185, 129, 0.4); }
 
-/* Contact Form */
-.contact-form-card { display: flex; flex-direction: column; }
+/* ==========================================================================
+   CONTACT FORM — FIX OVERLAP BETWEEN BUTTON AND TEXTAREA
+   ========================================================================== */
+.contact-form-card {
+    display: flex;
+    flex-direction: column;
+    height: 75%;
+}
 
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
 
-.form-group { display: flex; flex-direction: column; }
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
 
 .form-group label {
     font-size: 0.82rem;
     font-weight: 600;
     color: var(--text-muted);
     margin-bottom: 0.4rem;
+    display: block;
 }
 
 select.form-control option { background: #0d1a2d; color: #fff; }
+
+/* ✅ FIX: Ensure textarea has enough height and doesn't collapse */
+.contact-form textarea.form-control {
+    min-height: 130px;
+    resize: vertical;
+    line-height: 1.5;
+    display: block;
+}
+
+/* ✅ FIX: Give the submit button clear spacing and prevent overlap */
+.contact-form .btn-glow {
+    margin-top: 1.75rem;
+    margin-bottom: 0.25rem;
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+}
 
 .contact-form-feedback {
     margin-top: 1rem;
