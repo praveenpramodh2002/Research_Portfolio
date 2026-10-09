@@ -3786,3 +3786,21 @@ select.form-control option { background: #0d1a2d; color: #fff; }
     position: relative;
     z-index: 1;
 }
+
+/* ==========================================================================
+   ✅ DOMAIN OVERVIEW SECTION - CURSOR POINTER FOR CARDS
+   ========================================================================== */
+.domain-card-full,
+.lit-paper-card,
+.gap-card,
+.gap-stat-item,
+.evidence-card,
+.problem-pillar,
+.objective-item,
+.method-card,
+.tech-cat-card,
+.tech-stack-category-pill,
+.obj-overview-item,
+.arch-flow-step {
+    cursor: pointer;
+}
