@@ -2108,6 +2108,8 @@
                                 <label for="contactMessage">Message *</label>
                                 <textarea id="contactMessage" class="form-control" rows="5" placeholder="Describe your inquiry or collaboration interest..." required></textarea>
                             </div>
+                            <!-- Honeypot spam trap: hidden from users, bots fill it in -->
+                            <input type="checkbox" id="contactBotcheck" name="botcheck" tabindex="-1" autocomplete="off" style="display:none;">
                             <button type="submit" class="btn btn-glow w-100 mt-4" id="btnSendContact">
                                 <i class="fa-solid fa-paper-plane"></i> Send Message
                             </button>
