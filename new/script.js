@@ -965,7 +965,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Mr. Nelum Amarasena",
       role: "Academic Co-Supervisor",
       id: "SLIIT CoEAI",
-      avatar: "",
+      avatar: "images/co-supervisor-nelum.jpeg",
       position: "Co-Supervisor — Centre of Excellence for AI (CoEAI), SLIIT",
       component: "AI Technical Co-Supervision & XAI Guidance",
       about:
